@@ -15,6 +15,7 @@ end
 
 group :development do
 	gem 'rspec-rails', '~> 2.8'
+	gem 'rspec-autotest'
 end
 
 group :test do
