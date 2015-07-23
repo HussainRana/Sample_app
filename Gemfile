@@ -16,7 +16,7 @@ end
 group :development do
 	gem 'rspec-rails', '~> 2.8'
 	gem 'rspec-autotest'
-	gem 'annotate-models', '1.0.4'
+	gem 'annotate', '2.4.0'
 end
 
 group :test do
