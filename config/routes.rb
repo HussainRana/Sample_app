@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  resources :user #to get REST url's
+  # get 'users/new'
 
     # You can have the root of your site routed with "root"
   root 'pages#home'
