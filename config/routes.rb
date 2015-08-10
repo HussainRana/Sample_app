@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   # get '/signup'
 
     # You can have the root of your site routed with "root"
-   get 'users/:id' => 'users#show'
-   get '/signup' => 'users#show'
+
+  # get 'users/:id', :to => 'users#show', :as => user
+   
   root 'pages#home'
+  
+  get 'users/new', :to => 'users#new', :as => :users
 
   get 'pages/contact'
 
