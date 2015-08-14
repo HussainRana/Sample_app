@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :user #to get REST url's
-  #get 'users/new'
+  # get 'users/new'
   # get '/signup'
 
     # You can have the root of your site routed with "root"
@@ -10,12 +10,15 @@ Rails.application.routes.draw do
   root 'pages#home'
   
   get 'users/new', :to => 'users#new', :as => :users
+  get '/signup', :to => 'users#new'
 
-  get 'pages/contact'
+  post 'users/new', :to=> 'users#create'
 
-  get 'pages/about'
+  get '/contact', :to => 'pages#contact'
 
-  get 'pages/help'
+  get '/about', :to => 'pages#about'
+
+  get '/help', :to => 'pages#help' 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

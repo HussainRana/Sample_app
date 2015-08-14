@@ -10,9 +10,16 @@ class UsersController < ApplicationController
   	# user_params
   end
 
-
-  # def user_params
-  # 	params.require(:user).permit(:name, :email)
-  # end
-
+   def create
+     # raise params[user_params].inspect
+    @user = User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation))
+    if @user.save
+      #handle successful save
+      flash[:success] = "Welcome to sample_app"
+      redirect_to @user
+    else
+    @title = "Sign up"
+    render :new
+    end
+  end
 end
